@@ -1,19 +1,20 @@
-pipeline{
-  agent {
-    docker { image 'maven:3.8-openjdk-11' }
-  }
-  stages {
-    stage('Build with Maven') {
-      steps {
-        sh 'mvn clean install'
-      }
+pipeline {
+    agent {
+        docker { image 'maven:3.8-openjdk-11' }
     }
-  }
-  stage('Run Java Program') {
-    steps {
-      sh 'java -jar target/HelloWorld.jar'
+    stages {
+        stage('Build with Maven') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+        stage('Run Java Program') {
+            steps {
+                sh 'java -jar target/HelloWorld.jar'
+            }
+        }
     }
-  }
 }
+
 
       

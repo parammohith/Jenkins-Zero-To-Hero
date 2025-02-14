@@ -10,7 +10,8 @@ pipeline {
         }
         stage('Run Java Program') {
             steps {
-                sh 'java -jar target/HelloWorld.jar'
+                java -jar target/hello-world-1.0-SNAPSHOT.jar
+
             }
         }
     }
